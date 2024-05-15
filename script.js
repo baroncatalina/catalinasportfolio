@@ -13,4 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    var closeButton = document.getElementById("close-button");
+
+    closeButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        var contactBox = document.getElementById('contact-box');
+        contactBox.style.display = 'none';
+    })
+
 });
