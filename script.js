@@ -12,15 +12,5 @@ document.addEventListener('DOMContentLoaded', function () {
             contactBox.style.display = 'block'; // Show the box if it's hidden
         }
     });
-    console.log("problem?")
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var closeIcon = document.querySelector('.close-button');
-        var contactBox = document.getElementById('contact-box');
-
-        closeIcon.addEventListener('click', function () {
-            contactBox.style.display = 'none'; // Oculta el box al hacer clic en la cruz
-        });
-    });
-    console.log("problem???")
 });
