@@ -41,6 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
         myPictureBox.style.display = 'none';
     });
 
+});
 
+$(document).ready(function () {
+    $(".fancybox").fancybox({
+        buttons: [
+            "thumbs",
+            "fullscreen",
+            "close"
+        ],
 
+        // Otras opciones FancyBox aquí
+    });
 });
