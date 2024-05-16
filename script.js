@@ -1,45 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const popUpBox1 = document.querySelector('.popup-box');
+    const popUpBox2 = document.querySelector('.popup-box2');
+    const contactButton = document.querySelector('#contact-link');
+    const nameButton = document.querySelector('#nombre-link');
+    const closeButtons = document.querySelectorAll('.close-button');
+    const overlay = document.querySelector('.overlay');
 
-    var contactLink = document.getElementById('contact-link');
+    const openContactPopUp = function () {
+        popUpBox1.classList.remove('hidden'),
+            overlay.classList.remove('hidden')
+    };
+    const openNamePopUp = function () {
+        popUpBox2.classList.remove('hidden'),
+            overlay.classList.remove('hidden')
+    };
 
-    contactLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default link behavior
-        var contactBox = document.getElementById('contact-box');
-        if (contactBox.style.display === 'block') {
-            contactBox.style.display = 'none';
-            // Hide the box if it's already visible
-        } else {
-            contactBox.style.display = 'block'; // Show the box if it's hidden
-        }
-    });
+    contactButton.addEventListener('click', openContactPopUp);
+    nameButton.addEventListener('click', openNamePopUp);
 
-    var closeButton = document.getElementById("close-button");
+    const closePopUp1 = function () {
+        popUpBox1.classList.add('hidden'),
+            overlay.classList.add('hidden')
+    };
 
-    closeButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        var contactBox = document.getElementById('contact-box');
-        contactBox.style.display = 'none';
-    });
+    const closePopUp2 = function () {
+        popUpBox2.classList.add('hidden'),
+            overlay.classList.add('hidden')
+    };
 
-    var myName = document.getElementById('nombre-link');
-    myName.addEventListener('click', function (event) {
-        event.preventDefault();
-        var myPictureBox = document.getElementById('my-picture-box');
-        if (myPictureBox.style.display === 'block') {
-            myPictureBox.style.display = 'none';
-            // Hide the box if it's already visible
-        } else {
-            myPictureBox.style.display = 'block'; // Show the box if it's hidden
-        }
-    });
-
-    var closeButton2 = document.getElementById("close-button2");
-
-    closeButton2.addEventListener('click', function (event) {
-        event.preventDefault();
-        var myPictureBox = document.getElementById('my-picture-box');
-        myPictureBox.style.display = 'none';
-    });
+    for (i = 0; i < closeButtons.length; i++) {
+        closeButtons[0].addEventListener('click', closePopUp1),
+            closeButtons[1].addEventListener('click', closePopUp2)
+    };
 
 });
 
