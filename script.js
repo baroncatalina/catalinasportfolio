@@ -67,9 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const svgDibujo = document.getElementById('Capa_1');
-
-
 });
 
 
