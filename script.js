@@ -33,16 +33,44 @@ document.addEventListener('DOMContentLoaded', function () {
             closeButtons[1].addEventListener('click', closePopUp2)
     };
 
-});
+    if (popUpBox1.classList.contains('hidden')) {
+        overlay.addEventListener('click', closePopUp1)
+    }
 
-$(document).ready(function () {
-    $(".fancybox").fancybox({
-        buttons: [
-            "thumbs",
-            "fullscreen",
-            "close"
-        ],
+    if (popUpBox2.classList.contains('hidden')) {
+        overlay.addEventListener('click', closePopUp2)
+    }
 
-        // Otras opciones FancyBox aquí
+    document.addEventListener('keydown', function (e) {
+        // console.log(e.key);
+
+        if (e.key === 'Escape' && !popUpBox1.classList.contains('hidden')) {
+            closePopUp1();
+        }
     });
+    document.addEventListener('keydown', function (e) {
+        // console.log(e.key);
+
+        if (e.key === 'Escape' && !popUpBox2.classList.contains('hidden')) {
+            closePopUp2();
+        }
+    });
+
+    $(document).ready(function () {
+        $(".fancybox").fancybox({
+            buttons: [
+                "thumbs",
+                "fullscreen",
+                "close"
+            ],
+
+        });
+    });
+
+    const svgDibujo = document.getElementById('Capa_1');
+
+
 });
+
+
+
